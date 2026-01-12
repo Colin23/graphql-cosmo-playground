@@ -1,0 +1,14 @@
+services:
+  cosmo-router:
+    image: ghcr.io/wundergraph/cosmo/router:latest
+    container_name: cosmo-router
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    pull_policy: always
+    ports:
+      - "3002:3002"
+    environment:
+      GRAPH_API_TOKEN: ${COSMO_ROUTER_TOKEN}
+    volumes:
+      - "./config.yaml:/config.yaml"

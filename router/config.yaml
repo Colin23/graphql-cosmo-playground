@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/wundergraph/cosmo/main/router/pkg/config/config.schema.json
+version: "1"
+
+dev_mode: true
+
+watch_config:
+  enabled: true
+  interval: "10s"
+  startup_delay:
+    enabled: false
+    maximum: "10s"
+
+log_level: "debug"
+
+localhost_fallback_inside_docker: true
+listen_addr: "0.0.0.0:3002"
+graphql_path: "/graphql"
+introspection:
+  enabled: true
+json_log: true
+shutdown_delay: 15s
+grace_period: 10s
+poll_interval: 10s
+health_check_path: "/health"
+readiness_check_path: "/health/ready"
+liveness_check_path: "/health/live"
+playground:
+  enabled: true
+  path: "/playground"
