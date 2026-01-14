@@ -1,3 +1,4 @@
 .idea
 docs
 router/.env
+**/node_modules

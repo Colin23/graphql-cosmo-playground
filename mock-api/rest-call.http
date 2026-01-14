@@ -1,0 +1,5 @@
+### Pokemon
+GET http://localhost:3011/pokemon
+
+### Trainer
+GET http://localhost:3011/trainers

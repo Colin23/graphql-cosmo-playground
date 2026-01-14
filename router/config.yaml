@@ -13,7 +13,7 @@ watch_config:
 log_level: "debug"
 
 localhost_fallback_inside_docker: true
-listen_addr: "0.0.0.0:3002"
+listen_addr: "0.0.0.0:3002" # Necessary because in Docker there is an automated fallback via 'host.docker.internal:host-gateway' to 0.0.0.0
 graphql_path: "/graphql"
 introspection:
   enabled: true
@@ -26,4 +26,4 @@ readiness_check_path: "/health/ready"
 liveness_check_path: "/health/live"
 playground:
   enabled: true
-  path: "/playground"
+  path: "/" # For some fucked up reason you CANNOT give the playground a dedicated path, as this will prepend whichever path you chose to the fetching URL and results in errors

@@ -1,0 +1,113 @@
+# For this to work in IntelliJ: Languages & Frameworks -> GraphQL -> activate 'Federation'
+extend schema
+@link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
+
+"""
+TODO: Add useful comments
+"""
+type Pokemon @key(fields: "id") {
+    """
+    TODO: Add useful comments
+    """
+    id: ID!
+    """
+    TODO: Add useful comments
+    """
+    name: String!
+    """
+    TODO: Add useful comments
+    """
+    alive: Boolean!
+    """
+    TODO: Add useful comments
+    """
+    type: Types!
+    """
+    TODO: Add useful comments
+    """
+    weight: Float!
+    """
+    TODO: Add useful comments
+    """
+    hp: Int!
+    """
+    TODO: Add useful comments
+    """
+    attack: Int
+    """
+    TODO: Add useful comments
+    """
+    defense: Int
+    """
+    TODO: Add useful comments
+    """
+    trainerId: Trainer!
+    """
+    TODO: Add useful comments
+    """
+    trainer: Trainer!
+}
+
+enum Types {
+    NORMAL
+    FIGHTING
+    ELECTRIC
+    FIRE
+    FLYING
+    WATER
+    GRASS
+    POISON
+}
+
+"""
+TODO: Add useful comments
+"""
+type Trainer @key(fields: "id", resolvable: false) {
+    """
+    TODO: Add useful comments
+    """
+    id: ID!
+    """
+    TODO: Add useful comments
+    """
+    name: String!
+    """
+    TODO: Add useful comments
+    """
+    hometown: String!
+    """
+    TODO: Add useful comments
+    """
+    badges: String!
+    """
+    TODO: Add useful comments
+    """
+    pokemonIds: [ID]!
+    """
+    TODO: Add useful comments
+    """
+    pokemons: [Pokemon]!
+}
+
+type Query {
+    """
+    TODO: Add useful comments
+    """
+    pokemon(id: ID!): Pokemon
+    """
+    TODO: Add useful comments
+    """
+    allPokemon: [Pokemon!]!
+    """
+    TODO: Add useful comments
+    """
+    pokemonByTrainer(trainerId: ID!): [Pokemon!]!
+    """
+    TODO: Add useful comments
+    """
+    trainer(id: ID!): Trainer
+    """
+    TODO: Add useful comments
+    """
+    allTrainer: [Trainer!]!
+}

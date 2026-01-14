@@ -1,0 +1,70 @@
+{
+  "pokemon": [
+    {
+      "id": "1",
+      "name": "Pikachu",
+      "alive": "true",
+      "type": "Electric",
+      "weight": 2.5,
+      "hp": 35,
+      "attack": 55,
+      "defense": 40,
+      "trainerId": "ash"
+    },
+    {
+      "id": "2",
+      "name": "Charizard",
+      "alive": "true",
+      "type": "Fire/Flying",
+      "weight": 50.0,
+      "hp": 78,
+      "attack": 84,
+      "defense": 78,
+      "trainerId": "ash"
+    },
+    {
+      "id": "3",
+      "name": "Blastoise",
+      "alive": "true",
+      "type": "Water",
+      "weight": 12.3,
+      "hp": 79,
+      "attack": 83,
+      "defense": 100,
+      "trainerId": "gary"
+    },
+    {
+      "id": "4",
+      "name": "Venusaur",
+      "alive": "false",
+      "type": "Grass/Poison",
+      "weight": 0.33,
+      "hp": 80,
+      "attack": 82,
+      "defense": 83,
+      "trainerId": "gary"
+    }
+  ],
+  "trainers": [
+    {
+      "id": "ash",
+      "name": "Ash Ketchum",
+      "hometown": "Pallet Town",
+      "badges": 8,
+      "pokemonIds": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "gary",
+      "name": "Gary Oak",
+      "hometown": "Pallet Town",
+      "badges": 10,
+      "pokemonIds": [
+        "3",
+        "4"
+      ]
+    }
+  ]
+}
